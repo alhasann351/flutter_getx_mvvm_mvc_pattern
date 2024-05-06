@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/utils/app_utils.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,9 +16,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
-        title: const Text(
-          'GetX MVVM/MVC Pattern',
-          style: TextStyle(
+        title: Text(
+          'app_bar_text'.tr,
+          style: const TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
             color: Colors.white,
