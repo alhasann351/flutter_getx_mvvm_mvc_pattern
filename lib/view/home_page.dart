@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/resources/assets/images_icons_assets.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/resources/fonts/app_fonts.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/utils/app_utils.dart';
 import 'package:get/get.dart';
 
@@ -23,6 +25,15 @@ class _HomePageState extends State<HomePage> {
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
+        ),
+      ),
+      body: const Text(
+        'Flutter',
+        style: TextStyle(
+          fontSize: 35,
+          fontFamily: AppFonts.poppinsBold,
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic
         ),
       ),
     );
