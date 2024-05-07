@@ -8,6 +8,9 @@ class Languages extends Translations{
       'internet_exception' : 'No internet connection\n Please check your internet\n connection',
       'general_exception' : 'We are unable to process request\n Please try again',
       'splash_text' : 'Welcome Back',
+      'login_appbar_text' : 'Login',
+      'email_hint' : 'Email',
+      'password_hint' : 'Password',
     },
     'bn_BN' : {
       'app_bar_text' : 'GetX এমভিভিএম/এমভিসি প্যাটার্ন',

@@ -8,4 +8,6 @@ class AppColors{
   static const Color snackBarTextColor = Colors.white;
   static const Color splashBackgroundColor = Colors.blue;
   static const Color splashTextColor = Colors.white;
+  static const Color appbarIconColor = Colors.white;
+  static const Color emailTextFormFieldColor = Colors.blue;
 }
