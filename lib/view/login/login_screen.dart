@@ -12,6 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final loginViewModel = Get.put(LoginViewModel());
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -34,34 +35,61 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextFormField(
-              controller: loginViewModel.emailController.value,
-              focusNode: loginViewModel.emailFocusNode.value,
-              decoration: InputDecoration(
-                //hintText: 'email_hint'.tr,
-                enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: AppColors.emailTextFormFieldColor,
-                    width: 2,
+        child: Focus(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextFormField(
+                controller: loginViewModel.emailController.value,
+                focusNode: loginViewModel.emailFocusNode.value,
+                decoration: InputDecoration(
+                  //hintText: 'email_hint'.tr,
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.emailTextFormFieldColor,
+                      width: 2,
+                    ),
                   ),
-                ),
-                focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: AppColors.emailTextFormFieldColor,
-                    width: 2,
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.emailTextFormFieldColor,
+                      width: 2,
+                    ),
                   ),
-                ),
-                labelText: 'email_hint'.tr,
-                labelStyle: const TextStyle(
-                  fontSize: 18,
+                  labelText: 'email_hint'.tr,
+                  labelStyle: const TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
               ),
-            ),
-          ],
+              const SizedBox(height: 15,),
+              TextFormField(
+                controller: loginViewModel.passwordController.value,
+                focusNode: loginViewModel.passwordFocusNode.value,
+                decoration: InputDecoration(
+                  //hintText: 'email_hint'.tr,
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.emailTextFormFieldColor,
+                      width: 2,
+                    ),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.emailTextFormFieldColor,
+                      width: 2,
+                    ),
+                  ),
+                  labelText: 'password_hint'.tr,
+                  labelStyle: const TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
