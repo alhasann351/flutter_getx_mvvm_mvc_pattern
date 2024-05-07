@@ -9,6 +9,7 @@ class Languages extends Translations{
       'general_exception' : 'We are unable to process request\n Please try again',
       'splash_text' : 'Welcome Back',
       'login_appbar_text' : 'Login',
+      'login_button_text' : 'Login',
       'email_hint' : 'Email',
       'password_hint' : 'Password',
     },

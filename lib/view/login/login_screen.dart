@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/colors/app_colors.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/rounded_button.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/view_models/controller/login_view_model.dart';
 import 'package:get/get.dart';
 
@@ -64,7 +66,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               TextFormField(
                 controller: loginViewModel.passwordController.value,
                 focusNode: loginViewModel.passwordFocusNode.value,
@@ -86,6 +90,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   labelStyle: const TextStyle(
                     fontSize: 18,
                   ),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                width: 200,
+                child: RoundedButton(
+                  buttonName: 'login_button_text'.tr,
+                  textStyle: const TextStyle(
+                    color: AppColors.loginButtonTextColor,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  callback: (){
+
+                  },
                 ),
               ),
             ],

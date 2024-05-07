@@ -10,4 +10,5 @@ class AppColors{
   static const Color splashTextColor = Colors.white;
   static const Color appbarIconColor = Colors.white;
   static const Color emailTextFormFieldColor = Colors.blue;
+  static const Color loginButtonTextColor = Colors.white;
 }
