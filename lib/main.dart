@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/localization/languages.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/routes/app_routes.dart';
-import 'package:flutter_getx_mvvm_mvc_pattern/view/home_page.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/view/splash_screen.dart';
 import 'package:get/get.dart';
 
 void main() {

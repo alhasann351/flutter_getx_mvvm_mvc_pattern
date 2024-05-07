@@ -1,14 +1,21 @@
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/routes/routes_name.dart';
-import 'package:flutter_getx_mvvm_mvc_pattern/view/home_page.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/view/login/login_screen.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/view/splash_screen.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
   static appRoutes() => [
         GetPage(
-          name: RoutesName.homePage,
-          page: () => const HomePage(),
+          name: RoutesName.splashScreen,
+          page: () => const SplashScreen(),
           transitionDuration: const Duration(milliseconds: 250),
           transition: Transition.leftToRightWithFade,
         ),
+    GetPage(
+      name: RoutesName.loginScreen,
+      page: () => const LoginScreen(),
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade,
+    ),
       ];
 }

@@ -6,4 +6,6 @@ class AppColors{
   static const Color toastMessageTextColor = Colors.white;
   static const Color snackBarBackgroundColor = Colors.blue;
   static const Color snackBarTextColor = Colors.white;
+  static const Color splashBackgroundColor = Colors.blue;
+  static const Color splashTextColor = Colors.white;
 }
