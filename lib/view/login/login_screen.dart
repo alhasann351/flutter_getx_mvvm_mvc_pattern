@@ -70,7 +70,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   if(value!.isEmpty){
                     return AppUtils.showToastMessage('email_validated_text'.tr);
                   }
+                  return null;
                 },
+                /*onFieldSubmitted: (value){
+                  return AppUtils.fieldFocusChange(context, loginViewModel.emailFocusNode.value, loginViewModel.passwordFocusNode.value);
+                },*/
               ),
               const SizedBox(
                 height: 15,
@@ -78,6 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(
                 controller: loginViewModel.passwordController.value,
                 focusNode: loginViewModel.passwordFocusNode.value,
+                obscureText: true,
+                obscuringCharacter: '*',
                 decoration: InputDecoration(
                   //hintText: 'email_hint'.tr,
                   enabledBorder: const OutlineInputBorder(
@@ -101,7 +107,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   if(value!.isEmpty){
                     return AppUtils.showToastMessage('password_validated_text'.tr);
                   }
+                  return null;
                 },
+                /*onFieldSubmitted: (value){
+                  //AppUtils.fieldFocusChange(context, loginViewModel.emailFocusNode.value, loginViewModel.passwordFocusNode.value);
+                },*/
               ),
               const SizedBox(
                 height: 30,
