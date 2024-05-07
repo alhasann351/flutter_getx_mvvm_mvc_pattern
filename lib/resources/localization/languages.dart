@@ -12,6 +12,8 @@ class Languages extends Translations{
       'login_button_text' : 'Login',
       'email_hint' : 'Email',
       'password_hint' : 'Password',
+      'email_validated_text' : 'Please enter email',
+      'password_validated_text' : 'Please enter password',
     },
     'bn_BN' : {
       'app_bar_text' : 'GetX এমভিভিএম/এমভিসি প্যাটার্ন',

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/colors/app_colors.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/rounded_button.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/utils/app_utils.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/view_models/controller/login_view_model.dart';
 import 'package:get/get.dart';
 
@@ -37,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Focus(
+        child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,6 +66,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontSize: 18,
                   ),
                 ),
+                validator: (value){
+                  if(value!.isEmpty){
+                    return AppUtils.showToastMessage('email_validated_text'.tr);
+                  }
+                },
               ),
               const SizedBox(
                 height: 15,
@@ -91,6 +97,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontSize: 18,
                   ),
                 ),
+                validator: (value){
+                  if(value!.isEmpty){
+                    return AppUtils.showToastMessage('password_validated_text'.tr);
+                  }
+                },
               ),
               const SizedBox(
                 height: 30,
@@ -105,7 +116,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                   callback: (){
-
+                    if(_formKey.currentState!.validate()){
+                    }
                   },
                 ),
               ),
