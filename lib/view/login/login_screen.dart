@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(
                 width: 200,
-                child: RoundedButton(
+                child: Obx(() => loginViewModel.loadingAnimation.value? const LoadingAnimation():RoundedButton(
                   buttonName: 'login_button_text'.tr,
                   textStyle: const TextStyle(
                     color: AppColors.loginButtonTextColor,
@@ -129,11 +129,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   callback: (){
                     if(_formKey.currentState!.validate()){
                       loginViewModel.loginApi();
-
-
                     }
                   },
-                )),
+                )),),
             ],
           ),
         ),
