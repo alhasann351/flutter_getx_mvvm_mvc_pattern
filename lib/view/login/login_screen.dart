@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/colors/app_colors.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/loading_animation.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/rounded_button.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/utils/app_utils.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/view_models/controller/login_view_model.dart';
@@ -73,8 +74,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
                 /*onFieldSubmitted: (value){
-                  return AppUtils.fieldFocusChange(context, loginViewModel.emailFocusNode.value, loginViewModel.passwordFocusNode.value);
-                },*/
+              return AppUtils.fieldFocusChange(context, loginViewModel.emailFocusNode.value, loginViewModel.passwordFocusNode.value);
+            },*/
               ),
               const SizedBox(
                 height: 15,
@@ -110,8 +111,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
                 /*onFieldSubmitted: (value){
-                  //AppUtils.fieldFocusChange(context, loginViewModel.emailFocusNode.value, loginViewModel.passwordFocusNode.value);
-                },*/
+              //AppUtils.fieldFocusChange(context, loginViewModel.emailFocusNode.value, loginViewModel.passwordFocusNode.value);
+            },*/
               ),
               const SizedBox(
                 height: 30,
@@ -127,14 +128,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   callback: (){
                     if(_formKey.currentState!.validate()){
+                      loginViewModel.loginApi();
+
+
                     }
                   },
-                ),
-              ),
+                )),
             ],
           ),
         ),
-      ),
+      )
     );
   }
 }

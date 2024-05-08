@@ -39,6 +39,7 @@ dependencies:
   shared_preferences:
   http:
   fluttertoast: ^8.2.5
+  loading_animation_widget: ^1.2.1
 
 dev_dependencies:
   flutter_test:
