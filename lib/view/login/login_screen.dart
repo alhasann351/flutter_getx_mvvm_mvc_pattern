@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_mvvm_mvc_pattern/resources/colors/app_colors.dart';
-import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/loading_animation.dart';
-import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/rounded_button.dart';
-import 'package:flutter_getx_mvvm_mvc_pattern/utils/app_utils.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/view/login/widgets/input_email.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/view/login/widgets/input_password.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/view/login/widgets/login_button.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/view_models/controller/login/login_view_model.dart';
 import 'package:get/get.dart';
 
@@ -45,93 +44,15 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextFormField(
-                controller: loginViewModel.emailController.value,
-                focusNode: loginViewModel.emailFocusNode.value,
-                decoration: InputDecoration(
-                  //hintText: 'email_hint'.tr,
-                  enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: AppColors.emailTextFormFieldColor,
-                      width: 2,
-                    ),
-                  ),
-                  focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: AppColors.emailTextFormFieldColor,
-                      width: 2,
-                    ),
-                  ),
-                  labelText: 'email_hint'.tr,
-                  labelStyle: const TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                validator: (value){
-                  if(value!.isEmpty){
-                    return AppUtils.showToastMessage('email_validated_text'.tr);
-                  }
-                  return null;
-                },
-                /*onFieldSubmitted: (value){
-              return AppUtils.fieldFocusChange(context, loginViewModel.emailFocusNode.value, loginViewModel.passwordFocusNode.value);
-            },*/
-              ),
+              InputEmail(),
               const SizedBox(
                 height: 15,
               ),
-              TextFormField(
-                controller: loginViewModel.passwordController.value,
-                focusNode: loginViewModel.passwordFocusNode.value,
-                obscureText: true,
-                obscuringCharacter: '*',
-                decoration: InputDecoration(
-                  //hintText: 'email_hint'.tr,
-                  enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: AppColors.emailTextFormFieldColor,
-                      width: 2,
-                    ),
-                  ),
-                  focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: AppColors.emailTextFormFieldColor,
-                      width: 2,
-                    ),
-                  ),
-                  labelText: 'password_hint'.tr,
-                  labelStyle: const TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
-                validator: (value){
-                  if(value!.isEmpty){
-                    return AppUtils.showToastMessage('password_validated_text'.tr);
-                  }
-                  return null;
-                },
-                /*onFieldSubmitted: (value){
-              //AppUtils.fieldFocusChange(context, loginViewModel.emailFocusNode.value, loginViewModel.passwordFocusNode.value);
-            },*/
-              ),
+              InputPassword(),
               const SizedBox(
                 height: 30,
               ),
-              SizedBox(
-                width: 200,
-                child: Obx(() => loginViewModel.loadingAnimation.value? const LoadingAnimation():RoundedButton(
-                  buttonName: 'login_button_text'.tr,
-                  textStyle: const TextStyle(
-                    color: AppColors.loginButtonTextColor,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  callback: (){
-                    if(_formKey.currentState!.validate()){
-                      loginViewModel.loginApi();
-                    }
-                  },
-                )),),
+              LoginButton(formKey: _formKey,),
             ],
           ),
         ),

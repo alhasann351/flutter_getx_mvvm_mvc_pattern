@@ -40,7 +40,8 @@ class LoginViewModel extends GetxController{
         );
 
         userPreferenceViewModel.saveUser(userModel).then((value){
-          Get.toNamed(RoutesName.homeScreen);
+          Get.delete<LoginViewModel>();
+          Get.toNamed(RoutesName.homeScreen)!.then((value){});
         }).onError((error, stackTrace){
 
         });
