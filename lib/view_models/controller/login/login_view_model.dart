@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/models/login/user_model.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/repository/login_repository/login_repository.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/resources/routes/routes_name.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/utils/app_utils.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/view_models/controller/user_preference/user_preference_view_model.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/get_rx.dart';
 
 class LoginViewModel extends GetxController{
   final _api = LoginRepository();
+
+  UserPreferenceViewModel userPreferenceViewModel = UserPreferenceViewModel();
 
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
@@ -29,6 +34,16 @@ class LoginViewModel extends GetxController{
         AppUtils.showSnackBar('Error', value['error']);
       }
       else{
+        UserModel userModel = UserModel(
+          token: 'token',
+          isLogin: true,
+        );
+
+        userPreferenceViewModel.saveUser(userModel).then((value){
+          Get.toNamed(RoutesName.homeScreen);
+        }).onError((error, stackTrace){
+
+        });
         AppUtils.showSnackBar('Login', 'Login successfully');
       }
 

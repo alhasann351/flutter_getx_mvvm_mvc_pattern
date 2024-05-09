@@ -4,7 +4,7 @@ import 'package:flutter_getx_mvvm_mvc_pattern/resources/colors/app_colors.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/loading_animation.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/rounded_button.dart';
 import 'package:flutter_getx_mvvm_mvc_pattern/utils/app_utils.dart';
-import 'package:flutter_getx_mvvm_mvc_pattern/view_models/controller/login_view_model.dart';
+import 'package:flutter_getx_mvvm_mvc_pattern/view_models/controller/login/login_view_model.dart';
 import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
