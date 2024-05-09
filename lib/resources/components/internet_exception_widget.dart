@@ -3,6 +3,8 @@ import 'package:flutter_getx_mvvm_mvc_pattern/resources/components/rounded_butto
 import 'package:flutter_getx_mvvm_mvc_pattern/resources/fonts/app_fonts.dart';
 import 'package:get/get.dart';
 
+import '../../view_models/controller/home/home_view_model.dart';
+
 class InternetExceptionWidget extends StatefulWidget {
   const InternetExceptionWidget({super.key});
 
@@ -12,6 +14,8 @@ class InternetExceptionWidget extends StatefulWidget {
 }
 
 class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
+  final homeViewModel = Get.put(HomeViewModel());
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -44,13 +48,9 @@ class _InternetExceptionWidgetState extends State<InternetExceptionWidget> {
             width: 200,
             child: RoundedButton(
               buttonName: 'Retry',
-              icon: const Icon(
-                Icons.login,
-                size: 40,
-                color: Colors.white,
-              ),
               callback: () {
                 print('Press Retry Button');
+                homeViewModel.refreshUserListApi();
               },
               textStyle: const TextStyle(
                 color: Colors.white,
